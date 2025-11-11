@@ -1,0 +1,93 @@
+Task 1:
+class Employee:
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
+
+    def display_info(self):
+        print(f"Name: {self.name}, Salary: {self.salary} тг")
+
+class Manager(Employee):
+    def __init__(self, name, salary, department):
+        super().__init__(name, salary)
+        self.department = department
+
+    def display_info(self):
+        print(f"Name: {self.name}, Salary: {self.salary} тг, Department: {self.department}")
+
+manager = Manager("Dana", 450000, "IT бөлім")
+manager.display_info()
+
+Жауабы:
+Name: Dana, Salary: 450000 тг, Department: IT бөлім
+
+Task 2:
+class Bird:
+    def speak(self):
+        print("This bird sings.")
+
+class Parrot(Bird):
+    def speak(self):
+        print("The parrot says: Hello!")
+
+b = Bird()
+p = Parrot()
+
+b.speak()
+p.speak()
+
+Жауабы:
+This bird sings.
+The parrot says: Hello!
+
+Task 3:
+class Shape:
+    def area(self):
+        pass
+
+class Square(Shape):
+    def __init__(self, side):
+        self.side = side
+
+    def area(self):
+        return self.side ** 2
+
+class Triangle(Shape):
+    def __init__(self, base, height):
+        self.base = base
+        self.height = height
+
+    def area(self):
+        return 0.5 * self.base * self.height
+
+shapes = [Square(4), Triangle(6, 3)]
+
+for shape in shapes:
+    print("Area:", shape.area())
+
+Жауабы:
+Area: 16
+Area: 9.0
+
+Task 4:
+class PoliceOfficer:
+    def work(self):
+        print("Maintaining public safety.")
+
+class Trainer:
+    def work(self):
+        print("Training new recruits.")
+
+class Chief(PoliceOfficer, Trainer):
+    def work(self):
+        super().work()
+        print("Also overseeing operations.")
+
+chief = Chief()
+chief.work()
+
+Жауабы:
+Maintaining public safety.
+Also overseeing operations.
+
+
